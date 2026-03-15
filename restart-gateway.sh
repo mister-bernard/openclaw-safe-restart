@@ -62,7 +62,7 @@ cat > "$RESTART_CONTEXT" << EOF
 {
   "pending": true,
   "context": "$CONTEXT",
-  "chat_id": "REDACTED_CHAT_ID",
+  "chat_id": "${TELEGRAM_CHAT_ID}",
   "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 }
 EOF
@@ -124,7 +124,7 @@ else
 {
   "pending": true,
   "context": "ROLLBACK: Restart for '$CONTEXT' failed. Auto-rolled back to last-known-good config. The change that broke it is in $BACKUP_DIR/openclaw.json.$TIMESTAMP — investigate.",
-  "chat_id": "REDACTED_CHAT_ID",
+  "chat_id": "${TELEGRAM_CHAT_ID}",
   "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 }
 ROLLEOF
